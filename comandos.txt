@@ -1,0 +1,50 @@
+COMANDOS
+asterisk -cvvvvv = iniciar en modo debug (recomendable)
+core stop now = parar asterisk
+CLI>
+reload = reconfigura no todos los modulos
+restart = corta llamadas y reconfigura todo
+sip show users = lista a los usuarios registrados
+core show ? (applications, functions)
+
+VOICEMAIL var/spool/asterisk/voicemail/
+
+PAG 137 Estructura para extesions.conf
+PAG 144 Variables que se puede utilizar e imprimir
+PAG 184 funcionalidades varias
+PAG 194 Buenas practicas para dialPlan
+PAG 211 Conecta 2 pbx
+PAG 217 colas de llamadas y agentes
+pag 224 INforme de llamadas logs => var/log/asterisk
+PAG 229 Pagina donde enseña a utilizar asterisk como lenguaje de programacion
+PAG 231 AGI Ejecuta asterisk desde casi cualquier lenguaje (PHP,phyton, java, bash,etc)
+PAG 233 AMI permite conectar desde otros lenguajes a asterisk (nodejs)
+PAG 236 ARA base de datos dinamico
+
+TECLAS ESPECIALES
+Abriendo un archivo con vi se puede borrar todos los comentarios
+:g/^\s*;/d 
+
+Y Para borrar espacios
+:g/^$/d 
+
+
+
+PENDIENTES
+- llamadas entrates y salientes     REALIZADO
+- Opciones de llamadas al operador
+    - espera - wait
+    - cola de llamadas 
+- Salas                             REALIZADO
+- Operarios contestan llamdas en espera de diferentes Salas
+- Historial de llamadas
+- Graba llamadas
+- Reproducir grabaciones 
+- Agenda de contactos               REALIZADO
+- Conferencia - Llamadas grupales   
+
+
+ssh -R 52698:127.0.0.1:52698 ubuntu@192.168.0.27
+sudo mkdir /etc/asterisk/keys
+sudo contrib/scripts/ast_tls_cert -C pbx.example.com -O "My Organization" -d /etc/asterisk/keys
+ls -w 1 /etc/asterisk/keys
